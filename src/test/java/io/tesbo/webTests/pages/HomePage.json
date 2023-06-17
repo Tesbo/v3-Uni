@@ -1,0 +1,8 @@
+{
+  "searchBox": "#search",
+  "submitButton": ".submit",
+  "headerText": "h1.header",
+  "loginLink": "//a[@href='/login']",
+  "signUpLink": "//a[@href='/signup']",
+  "welcomeMessage": ".welcome"
+}

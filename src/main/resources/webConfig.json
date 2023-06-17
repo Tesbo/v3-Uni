@@ -1,10 +1,11 @@
 {
   "testType": "web",
   "testFramework": "TestNG",
+  "baseUrl": "https://www.google.com",
   "testConfiguration": {
     "retries": 3,
     "timeout": 120,
-    "runLocation": "cloud"
+    "runLocation": "local"
   },
   "browser": {
     "name": "chrome",
@@ -14,6 +15,10 @@
   "platform": {
     "name": "windows",
     "version": "10"
+  },
+  "capabilities": {
+    "browserVersion": "92",
+    "platformName": "Windows 10"
   },
   "cloudPlatform": {
     "name": "Sauce Labs",
