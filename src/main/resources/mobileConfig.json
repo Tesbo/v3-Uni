@@ -1,0 +1,20 @@
+{
+  "testType": "mobile",
+  "testFramework": "JUnit",
+  "testConfiguration": {
+    "retries": 2,
+    "timeout": 180,
+    "runLocation": "local"
+  },
+  "device": {
+    "name": "iPhone 12",
+    "platformName": "iOS",
+    "platformVersion": "14.4",
+    "orientation": "PORTRAIT"
+  },
+  "apkFile": "path/to/your/app.apk",
+  "dataSource": {
+    "type": "excel",
+    "location": "path/to/data.xlsx"
+  }
+}

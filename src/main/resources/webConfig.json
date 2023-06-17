@@ -1,0 +1,28 @@
+{
+  "testType": "web",
+  "testFramework": "TestNG",
+  "testConfiguration": {
+    "retries": 3,
+    "timeout": 120,
+    "runLocation": "cloud"
+  },
+  "browser": {
+    "name": "chrome",
+    "version": "latest",
+    "headless": false
+  },
+  "platform": {
+    "name": "windows",
+    "version": "10"
+  },
+  "cloudPlatform": {
+    "name": "Sauce Labs",
+    "url": "https://ondemand.saucelabs.com:443/wd/hub",
+    "username": "your_username",
+    "accessKey": "your_access_key"
+  },
+  "dataSource": {
+    "type": "json",
+    "location": "path/to/data.json"
+  }
+}

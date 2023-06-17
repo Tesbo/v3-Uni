@@ -1,0 +1,21 @@
+{
+  "testType": "api",
+  "testFramework": "Playwright",
+  "testConfiguration": {
+    "retries": 2,
+    "timeout": 180
+  },
+  "baseUrl": "https://api.myapp.com",
+  "auth": {
+    "type": "OAuth2",
+    "token": "your_token"
+  },
+  "dataSource": {
+    "type": "database",
+    "dbType": "mysql",
+    "host": "localhost",
+    "database": "testdb",
+    "username": "db_user",
+    "password": "db_password"
+  }
+}
