@@ -1,8 +1,4 @@
 {
-  "searchBox": "#search",
-  "submitButton": ".submit",
-  "headerText": "h1.header",
-  "loginLink": "//a[@href='/login']",
-  "signUpLink": "//a[@href='/signup']",
-  "welcomeMessage": ".welcome"
+  "email": {"type": "xpath","value" :  "//*[@id=\"email\"]"},
+  "password": {"type": "id","value" :  "password"}
 }

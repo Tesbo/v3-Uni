@@ -28,7 +28,7 @@ public class BaseTest {
 
     protected WebDriver webDriver;
     protected AppiumDriver mobileDriver;
-    protected ConfigurationReader configReader;
+    static public ConfigurationReader configReader;
 
 
     @BeforeMethod

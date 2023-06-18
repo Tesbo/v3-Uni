@@ -5,7 +5,7 @@
     "retries": 2,
     "timeout": 180
   },
-  "baseUrl": "https://api.myapp.com",
+  "baseUrl": "https://reports.tesbo.io/login",
   "auth": {
     "type": "OAuth2",
     "token": "your_token"

@@ -1,7 +1,7 @@
 {
   "testType": "web",
   "testFramework": "TestNG",
-  "baseUrl": "https://www.google.com",
+  "baseUrl": "https://reports.tesbo.io/login",
   "testConfiguration": {
     "retries": 3,
     "timeout": 120,
