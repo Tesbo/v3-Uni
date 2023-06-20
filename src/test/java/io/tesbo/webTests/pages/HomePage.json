@@ -1,4 +1,27 @@
 {
-  "email": {"type": "xpath","value" :  "//*[@id=\"email\"]"},
-  "password": {"type": "id","value" :  "password"}
+  "email": {
+    "type": "text box",
+    "locator": "xpath",
+    "value": "//*[@id=\"email\"]"
+  },
+  "password": {
+    "type": "text box",
+    "locator": "id",
+    "value": "password"
+  },
+  "submit": {
+    "type": "button",
+    "locator": "css",
+    "value": "#submitBtn"
+  },
+  "geneder": {
+    "type": "checkBox",
+    "locator": "css",
+    "value": "#submitBtn"
+  },
+  "Hobby": {
+    "type": "text",
+    "locator": "css",
+    "value": "#submitBtn"
+  }
 }

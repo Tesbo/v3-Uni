@@ -2,7 +2,10 @@ package io.tesbo.Actions;
 
 import io.tesbo.framework.BaseTest;
 import io.tesbo.framework.PageLocatorReader;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -11,7 +14,6 @@ import java.time.Duration;
 import java.util.Map;
 
 public class Element {
-
     private WebDriver driver;
     private String locatorDirectory;
 
@@ -24,22 +26,30 @@ public class Element {
         }
     }
 
-    private By getLocatorBy(String locatorKey) {
-        Map<String, String> locator = new PageLocatorReader(locatorDirectory).getLocatorValue(locatorKey);
-        Map.Entry<String, String> entry = locator.entrySet().iterator().next();
-        String type = entry.getKey();
-        String value = entry.getValue();
+    private By getLocatorBy(String locatorName) {
+        Map<String, String> locatorProperties = new PageLocatorReader(locatorDirectory).getLocatorProperties(locatorName);
+        String locatorType = locatorProperties.get("type");
+        String locatorValue = locatorProperties.get("value");
 
-        switch (type) {
-            case "id": return By.id(value);
-            case "name": return By.name(value);
-            case "class": return By.className(value);
-            case "css": return By.cssSelector(value);
-            case "linkText": return By.linkText(value);
-            case "partialLinkText": return By.partialLinkText(value);
-            case "tag": return By.tagName(value);
-            case "xpath": return By.xpath(value);
-            default: throw new IllegalArgumentException("Unsupported locator type: " + type);
+        switch (locatorType) {
+            case "id":
+                return By.id(locatorValue);
+            case "name":
+                return By.name(locatorValue);
+            case "class":
+                return By.className(locatorValue);
+            case "css":
+                return By.cssSelector(locatorValue);
+            case "linkText":
+                return By.linkText(locatorValue);
+            case "partialLinkText":
+                return By.partialLinkText(locatorValue);
+            case "tag":
+                return By.tagName(locatorValue);
+            case "xpath":
+                return By.xpath(locatorValue);
+            default:
+                throw new IllegalArgumentException("Unsupported locator type: " + locatorType);
         }
     }
 
@@ -49,6 +59,8 @@ public class Element {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
+    // Add other action methods as per your requirement
+
     public void click(String locatorName) {
         getWebElement(locatorName).click();
     }
@@ -57,6 +69,11 @@ public class Element {
         WebElement element = getWebElement(locatorName);
         element.clear();
         element.sendKeys(text);
+    }
+
+    public void clearText(String locatorName) {
+        WebElement element = getWebElement(locatorName);
+        element.clear();
     }
 
     public String getText(String locatorName) {
@@ -85,5 +102,11 @@ public class Element {
         WebElement targetElement = getWebElement(targetLocator);
         Actions action = new Actions(driver);
         action.dragAndDrop(sourceElement, targetElement).perform();
+    }
+
+    public boolean isEnabled(String locatorName) {
+        WebElement element = getWebElement(locatorName);
+
+        return element.isEnabled();
     }
 }
