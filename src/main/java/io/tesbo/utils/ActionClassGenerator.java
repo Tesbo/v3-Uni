@@ -162,18 +162,26 @@ public class ActionClassGenerator {
             methodNameBuilder.append("verify").append(capitalizeFirstLetter(locatorName)).append(capitalizeFirstLetter(locatorType)).append("IsEnabled");
         } else if (action.equals("check")  )
         {
+            methodNameBuilder.append("clickOn").append(capitalizeFirstLetter(locatorName)).append(capitalizeFirstLetter(locatorType)).append("ToCheck");
         }
         else if (action.equals("uncheck")  )
         {
+            methodNameBuilder.append("clickOn").append(capitalizeFirstLetter(locatorName)).append(capitalizeFirstLetter(locatorType)).append("ToUnCheck");
         }
         else if (action.equals("selectByVisibleText")  )
         {
+            methodNameBuilder.append("selectOptionUsingTextBy").append(capitalizeFirstLetter(locatorName)).append("Dropdown");
+
         }
         else if (action.equals("selectByIndex")  )
         {
+            methodNameBuilder.append("selectOptionUsingIndexBy").append(capitalizeFirstLetter(locatorName)).append("Dropdown");
+
         }
         else if (action.equals("selectByValue")  )
         {
+            methodNameBuilder.append("selectOptionUsingValueBy").append(capitalizeFirstLetter(locatorName)).append("Dropdown");
+
         }
 
         else if (action.equals("getSelectedOption")  )
